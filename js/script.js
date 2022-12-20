@@ -3,7 +3,6 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
-        newItem: ``,
         toDolist: [
           {
             text: `Jujutsu Kaisen`,
