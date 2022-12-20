@@ -41,6 +41,9 @@ const { createApp } = Vue
           singleItem.done = false
         }
       },
+      deleteItem(index){
+        this.toDolist.splice(index, 1)
+      },
       addNewitem(){
           let object = {
           text: this.newItem,
