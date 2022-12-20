@@ -12,6 +12,40 @@
 <body>
     <div id="app">
 
+        <div class="container title text-center py-5">
+            <h1>To Do List</h1>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="card p-4 height-card">
+                    <div class="row">
+                        <div class="col">
+                            <div class="container-item">
+                                <ul class="list-unstyled">
+                                    <li class="d-flex justify-content-between align-items-center" v-for="(item, index) in toDolist">
+                                        <div class="my-3" :class="item.done ? `checked` : ``" @click="check(index)">
+                                            {{ index + 1 }} - {{ item.text }}
+                                        </div>
+                                        <button class="btn btn-danger btn-square" @click="deleteItem(index)">x</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="container-input d-flex gap-3 my-3">
+                    <input type="text" class="form-control w-75" placeholder="Scrivi gli anime da aggiungere alla lista:" v-model="newItem">
+                    <button class="btn btn-success w-25" @click="addNewitem">Aggiungi Anime</button>
+                </div>
+            </div>
+        </div>
+
     </div>
     <!-- VUE -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>   
