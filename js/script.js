@@ -7,7 +7,7 @@ const { createApp } = Vue
         toDolist: [
           {
             text: `Jujutsu Kaisen`,
-            done: false,
+            done: true,
           },
           {
             text: `Naruto`,
@@ -23,7 +23,7 @@ const { createApp } = Vue
           },
           {
             text: `One Pice`,
-            done: true,
+            done: false,
           },
           {
             text: `One Punch`,
@@ -33,6 +33,7 @@ const { createApp } = Vue
       }
     },
     methods: {
+
       check(index){
         let singleItem = this.toDolist[index]
         if(singleItem.done == false){
@@ -41,9 +42,11 @@ const { createApp } = Vue
           singleItem.done = false
         }
       },
+
       deleteItem(index){
         this.toDolist.splice(index, 1)
       },
+
       addNewitem(){
           let object = {
           text: this.newItem,
@@ -52,6 +55,7 @@ const { createApp } = Vue
         this.toDolist.push(object)
         this.newitem = ``
       }
+
     },
   }).mount('#app')
 
